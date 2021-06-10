@@ -1,0 +1,79 @@
+@import '/styles/variables';
+
+.actions {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100px;
+
+  .input_small,
+  .input_large {
+    padding: 0.8rem 1.3rem;
+    border-radius: 5.9rem;
+    width: 100%;
+    border: none;
+
+    &:focus {
+      outline: none;
+    }
+
+    &::placeholder {
+      color: inherit;
+    }
+  }
+
+  .input_large {
+    display: none;
+  }
+
+  i {
+    position: absolute;
+    right: 15%;
+  }
+}
+
+@media (min-width: 501px) {
+  .actions {
+    width: 150px;
+
+    i {
+      right: 10%;
+    }
+  }
+}
+
+@media (min-width: 701px) {
+  .actions {
+    width: 200px;
+
+    .input_small {
+      font-size: 1.4rem;
+      padding: 1.7rem 2.2rem;
+    }
+
+    i {
+      font-size: 1.4rem;
+    }
+  }
+}
+
+@media (min-width: 1023px) {
+  .actions {
+    width: 395px;
+
+    .input_small {
+      display: none;
+    }
+
+    .input_large {
+      font-size: 1.8rem;
+      padding: 2.3rem 2.8rem;
+      display: inline-block;
+    }
+
+    i {
+      font-size: 1.8rem;
+      right: 8%;
+    }
+  }
+}
