@@ -24,3 +24,11 @@ h2 {
 h3 {
   font-weight: $font-weight-semi-bold;
 }
+
+a {
+  text-decoration: none;
+}
+
+input::-webkit-calendar-picker-indicator {
+  visibility: hidden;
+}

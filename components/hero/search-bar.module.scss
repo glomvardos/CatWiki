@@ -5,9 +5,9 @@
   align-items: center;
   position: relative;
   width: 100px;
+  position: relative;
 
-  .input_small,
-  .input_large {
+  input {
     padding: 0.8rem 1.3rem;
     border-radius: 5.9rem;
     width: 100%;
@@ -20,10 +20,6 @@
     &::placeholder {
       color: inherit;
     }
-  }
-
-  .input_large {
-    display: none;
   }
 
   i {
@@ -46,7 +42,7 @@
   .actions {
     width: 200px;
 
-    .input_small {
+    input {
       font-size: 1.4rem;
       padding: 1.7rem 2.2rem;
     }
@@ -61,11 +57,7 @@
   .actions {
     width: 395px;
 
-    .input_small {
-      display: none;
-    }
-
-    .input_large {
+    input {
       font-size: 1.8rem;
       padding: 2.3rem 2.8rem;
       display: inline-block;
@@ -74,6 +66,54 @@
     i {
       font-size: 1.8rem;
       right: 8%;
+    }
+  }
+
+  .container {
+    position: absolute;
+    background-color: $primary-bg-color;
+    overflow: auto;
+    width: 339px;
+    border-radius: 0 0 2rem 2rem;
+    max-height: 300px;
+    font-size: 1.8rem;
+    z-index: 1;
+    top: 101%;
+    left: 7%;
+    animation: searchItems 200ms ease-in;
+
+    ul {
+      list-style: none;
+
+      li {
+        padding: 1.8rem 3rem;
+        cursor: default;
+        font-weight: $font-weight-medium;
+
+        &:hover {
+          color: $white-font-color;
+          background-color: $bg-dark;
+        }
+      }
+    }
+
+    @keyframes searchItems {
+      0% {
+        opacity: 0;
+        max-height: 0;
+      }
+
+      30% {
+        opacity: 0.3;
+      }
+
+      60% {
+        opacity: 0.6;
+      }
+
+      100% {
+        opacity: 1;
+      }
     }
   }
 }

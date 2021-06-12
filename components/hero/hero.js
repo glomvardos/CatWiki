@@ -1,16 +1,17 @@
 import Logo from '../layout/logo'
-
-import classes from './hero.module.scss'
 import SearchBar from './search-bar'
 
-function Hero() {
+import classes from './hero.module.scss'
+
+function Hero(props) {
+  const { breeds } = props
   return (
     <header className={classes.header}>
       <div>
         <Logo />
         <h1>Get to know more about your cat breed</h1>
       </div>
-      <SearchBar />
+      <SearchBar breeds={breeds} />
     </header>
   )
 }
