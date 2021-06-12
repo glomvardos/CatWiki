@@ -11,8 +11,8 @@ function BreedPage(props) {
 export async function getStaticProps(context) {
   const { slug } = context.params
   const data = await getBreeds()
-  const findBreed = data.find(breed => breed.name.toLowerCase() === slug[1].toLowerCase())
-  console.log(findBreed)
+  const findBreed = data.find(breed => breed.name.toLowerCase() === slug[1])
+
   return {
     props: {
       breed: findBreed,

@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import BreedInfoRating from './breed-details/breed-info-rating'
 
 import classes from './breed-description.module.scss'
 
@@ -25,6 +26,7 @@ function BreedDescription(props) {
         <p className={classes.breed_details}>
           <strong>Life Span:</strong> {breed.life_span}
         </p>
+        <BreedInfoRating breed={breed} />
       </div>
     </div>
   )

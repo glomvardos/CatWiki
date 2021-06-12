@@ -1,0 +1,21 @@
+.breed_rating {
+  display: flex;
+
+  div {
+    margin-right: 0.2rem;
+  }
+
+  .filled {
+    width: 25px;
+    height: 6px;
+    background-color: #544439;
+    border-radius: 8px;
+  }
+
+  .empty {
+    width: 25px;
+    height: 6px;
+    background-color: #e0e0e0;
+    border-radius: 8px;
+  }
+}
