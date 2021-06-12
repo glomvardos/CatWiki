@@ -1,0 +1,36 @@
+@import '/styles/variables';
+
+.footer {
+  padding: 3rem;
+  background-color: $bg-dark;
+  border-radius: 4.2rem 4.2rem 0 0;
+  color: $white-font-color;
+
+  .copy {
+    text-decoration: none;
+    font-size: 2.4rem;
+    font-weight: $font-weight-regular;
+    margin: 0 0.4rem 0 0;
+  }
+
+  svg {
+    height: auto;
+    width: 75px;
+    path {
+      fill: #fff;
+    }
+  }
+
+  p {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    font-size: 1.4rem;
+  }
+
+  span {
+    margin: 0 0.4rem;
+    text-decoration: underline;
+    font-weight: $font-weight-bold;
+  }
+}

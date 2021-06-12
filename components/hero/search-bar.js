@@ -1,14 +1,14 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { useRouter } from 'next/router'
-import Link from 'next/link'
 import classes from './search-bar.module.scss'
 
 function SearchBar(props) {
   const { breeds } = props
-
   const [breed, setBreed] = useState('')
   const [foundBreeds, setFoundBreeds] = useState(breeds)
   const [isFocus, setIsFocus] = useState(false)
+
+  const inputRef = useRef()
 
   const router = useRouter()
 
@@ -22,7 +22,7 @@ function SearchBar(props) {
       )
       setFoundBreeds(results)
     } else {
-      setFoundBreeds(breedNames)
+      setFoundBreeds(breeds)
     }
 
     setBreed(keyword)
@@ -37,28 +37,57 @@ function SearchBar(props) {
     setIsFocus(false)
   }
 
+  // POST popular breed
+  async function searchedBreedHandler(breedName) {
+    const searchedBreed = breeds.find(
+      breedItem => breedItem.name.toLowerCase() === breedName.toLowerCase()
+    )
+
+    const response = await fetch('/api/popular-breeds', {
+      method: 'POST',
+      body: JSON.stringify(searchedBreed),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+
+    const data = await response.json()
+    console.log(data)
+  }
+
+  // Handle Input Field
+  function inputFieldHandler(breedName) {
+    setBreed(breedName)
+
+    inputRef.current.focus()
+  }
+
   // Handle Search Submits
   function onClickSearchHandler() {
     if (breed.trim() === '') return
+    searchedBreedHandler(breed)
     router.push(`/breed/${breed.toLowerCase()}`)
   }
 
   function onSubmitHandler(event) {
     event.preventDefault()
     if (breed.trim() === '') return
+    searchedBreedHandler(breed)
+
     router.push(`/breed/${breed.toLowerCase()}`)
   }
 
   // Display Breed Items
   const displayBreeds = foundBreeds.map(breed => (
-    <Link key={breed.id} href={`/breed/${breed.name.toLowerCase()}`}>
-      <li>{breed.name}</li>
-    </Link>
+    <li key={breed.id} onClick={() => inputFieldHandler(breed.name)}>
+      {breed.name}
+    </li>
   ))
 
   return (
     <form onSubmit={onSubmitHandler} className={classes.actions} onMouseLeave={onMouseLeave}>
       <input
+        ref={inputRef}
         type='text'
         value={breed}
         onChange={searchHandler}

@@ -1,21 +1,28 @@
 import CatBreed from '../../components/cat-breed/cat-breed'
 
-import { getBreeds } from '../../helpers/getBreeds'
+import { getBreedImages, getBreeds } from '../../helpers/getBreeds'
 
 function BreedPage(props) {
-  const { breed } = props
+  const { breed, breedImages } = props
 
-  return <CatBreed breed={breed} />
+  return <CatBreed breed={breed} breedImages={breedImages} />
 }
 
 export async function getStaticProps(context) {
   const { slug } = context.params
+
+  // Get Breed
   const data = await getBreeds()
   const findBreed = data.find(breed => breed.name.toLowerCase() === slug[1])
+
+  // Get Images For The Fetched Breed
+  const imageData = await getBreedImages(findBreed.id)
+  const getImages = imageData.map(img => ({ url: img.url, id: img.id }))
 
   return {
     props: {
       breed: findBreed,
+      breedImages: getImages,
     },
   }
 }
@@ -23,12 +30,12 @@ export async function getStaticProps(context) {
 export async function getStaticPaths() {
   const data = await getBreeds()
 
-  const filteredData = data.map(catBreed => ({
+  const breedPaths = data.map(catBreed => ({
     params: { slug: ['breed', catBreed.name.toLowerCase()] },
   }))
 
   return {
-    paths: filteredData,
+    paths: breedPaths,
     fallback: false,
   }
 }

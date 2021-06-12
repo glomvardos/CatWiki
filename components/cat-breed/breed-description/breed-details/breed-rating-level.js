@@ -5,12 +5,9 @@ function BreedRatingLevel(props) {
 
   const divs = [<div></div>, <div></div>, <div></div>, <div></div>, <div></div>]
 
+  // Map over the divs and add a class based on the recieving prop number
   const displayDivs = divs.map((_, i) => {
-    return (
-      <div key={i}>
-        <div className={i < breedRating ? classes.filled : classes.empty}></div>
-      </div>
-    )
+    return <div key={i} className={i < breedRating ? classes.filled : classes.empty}></div>
   })
 
   return <div className={classes.breed_rating}>{displayDivs}</div>

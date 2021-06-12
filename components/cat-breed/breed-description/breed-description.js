@@ -5,12 +5,18 @@ import classes from './breed-description.module.scss'
 
 function BreedDescription(props) {
   const { breed } = props
-  console.log(breed)
+
   return (
     <div className={classes.breed_info}>
       <div className={classes.img_wrapper}>
         {breed.image.url && (
-          <Image src={breed.image.url} alt={breed.title} width={300} height={300} />
+          <Image
+            src={breed.image.url}
+            alt={breed.title}
+            width={300}
+            height={300}
+            layout='intrinsic'
+          />
         )}
       </div>
 

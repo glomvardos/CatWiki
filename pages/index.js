@@ -9,7 +9,7 @@ function HomePage(props) {
   return (
     <>
       <Hero breeds={breeds} />
-      <MostSearchedBreeds />
+      <MostSearchedBreeds breeds={breeds} />
     </>
   )
 }
@@ -17,7 +17,11 @@ function HomePage(props) {
 export async function getStaticProps() {
   const data = await getBreeds()
 
-  const transformedData = data.map(breed => ({ name: breed.name, id: breed.id }))
+  const transformedData = data.map(breed => ({
+    name: breed.name,
+    id: breed.id,
+    image: breed.image?.url || '',
+  }))
 
   return {
     props: {
