@@ -43,7 +43,7 @@ function SearchBar(props) {
       breedItem => breedItem.name.toLowerCase() === breedName.toLowerCase()
     )
 
-    const response = await fetch('/api/popular-breeds', {
+    const response = await fetch('/api/post-popular-breeds', {
       method: 'POST',
       body: JSON.stringify(searchedBreed),
       headers: {
@@ -58,7 +58,6 @@ function SearchBar(props) {
   // Handle Input Field
   function inputFieldHandler(breedName) {
     setBreed(breedName)
-
     inputRef.current.focus()
   }
 

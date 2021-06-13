@@ -1,4 +1,4 @@
-import CatBreed from '../../components/cat-breed/cat-breed'
+import CatBreed from '../../components/cat-breed-page/cat-breed'
 
 import { getBreedImages, getBreeds } from '../../helpers/getBreeds'
 
