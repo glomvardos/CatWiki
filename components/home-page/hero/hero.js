@@ -1,4 +1,4 @@
-import Logo from '../layout/logo'
+import Logo from '../../layout/logo'
 import SearchBar from './search-bar'
 
 import classes from './hero.module.scss'

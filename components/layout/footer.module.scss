@@ -1,7 +1,7 @@
 @import '/styles/variables';
 
 .footer {
-  padding: 2.5rem;
+  padding: 2rem;
   background-color: $bg-dark;
   border-radius: 4.2rem 4.2rem 0 0;
   color: $white-font-color;
@@ -32,5 +32,41 @@
     margin: 0 0.4rem;
     text-decoration: underline;
     font-weight: $font-weight-bold;
+  }
+}
+
+@media (min-width: 501px) {
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    p {
+      margin-top: 0;
+    }
+  }
+}
+
+@media (min-width: 701px) {
+  .footer {
+    padding: 2rem 5rem;
+
+    svg {
+      width: 85px;
+    }
+  }
+}
+
+@media (min-width: 1023px) {
+  .footer {
+    padding: 3rem 8rem;
+
+    p {
+      font-size: 1.8rem;
+    }
+
+    svg {
+      width: 110px;
+    }
   }
 }

@@ -1,5 +1,6 @@
-import Hero from '../components/hero/hero'
-import MostSearchedBreeds from '../components/morst-searched-breeds/most-searched-breeds'
+import Hero from '../components/home-page/hero/hero'
+import MostSearchedBreeds from '../components/home-page/morst-searched-breeds/most-searched-breeds'
+import GetAcat from '../components/home-page/get-a-cat/get-a-cat'
 import { connectDatabase, getPopularBreeds } from '../helpers/connectDatabase'
 import { getBreeds } from '../helpers/getBreeds'
 
@@ -10,6 +11,7 @@ function HomePage(props) {
     <>
       <Hero breeds={breeds} />
       <MostSearchedBreeds popularBreeds={popularBreeds} />
+      <GetAcat />
     </>
   )
 }
