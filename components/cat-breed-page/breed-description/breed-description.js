@@ -20,7 +20,7 @@ function BreedDescription(props) {
         )}
       </div>
 
-      <div>
+      <div className={classes.breed_container}>
         <h1>{breed.name}</h1>
         <p className={classes.breed_description}>{breed.description}</p>
         <p className={classes.breed_details}>

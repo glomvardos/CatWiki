@@ -31,7 +31,6 @@
     background-color: $primary-bg-color;
     overflow: auto;
     width: 200px;
-    border-radius: 0 0 2rem 2rem;
     max-height: 250px;
     font-size: 1.4rem;
     z-index: 1;
@@ -97,11 +96,11 @@
     }
 
     .container {
-      width: 339px;
+      width: 375px;
       max-height: 300px;
       font-size: 1.8rem;
       top: 101%;
-      left: 7%;
+      left: 2.8%;
 
       li {
         padding: 1.8rem 3rem;

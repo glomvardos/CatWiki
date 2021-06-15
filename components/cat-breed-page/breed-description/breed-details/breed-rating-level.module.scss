@@ -19,3 +19,39 @@
     border-radius: 8px;
   }
 }
+
+@media (min-width: 701px) {
+  .breed_rating {
+    div {
+      margin-right: 0.3rem;
+    }
+
+    .filled {
+      width: 40px;
+      height: 8px;
+    }
+
+    .empty {
+      width: 40px;
+      height: 8px;
+    }
+  }
+}
+
+@media (min-width: 1023px) {
+  .breed_rating {
+    div {
+      margin-right: 0.8rem;
+    }
+
+    .filled {
+      width: 50px;
+      height: 11px;
+    }
+
+    .empty {
+      width: 50px;
+      height: 11px;
+    }
+  }
+}

@@ -20,6 +20,7 @@ function SearchBar(props) {
       const results = breeds.filter(breed =>
         breed.name.toLowerCase().startsWith(keyword.toLowerCase())
       )
+
       setFoundBreeds(results)
     } else {
       setFoundBreeds(breeds)
@@ -35,6 +36,7 @@ function SearchBar(props) {
 
   function onMouseLeave() {
     setIsFocus(false)
+    inputRef.current.blur()
   }
 
   // POST popular breed
@@ -97,7 +99,9 @@ function SearchBar(props) {
 
       {isFocus && (
         <div className={classes.container}>
-          <ul>{foundBreeds && foundBreeds.length > 0 && displayBreeds}</ul>
+          <ul>
+            {(foundBreeds && foundBreeds.length > 0 && displayBreeds) || <li>No Results found</li>}
+          </ul>
         </div>
       )}
 

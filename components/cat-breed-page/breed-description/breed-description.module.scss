@@ -33,3 +33,75 @@
     line-height: 1.5rem;
   }
 }
+
+@media (min-width: 701px) {
+  .breed_info {
+    display: flex;
+    padding: 0 4rem;
+
+    .img_wrapper {
+      min-width: 200px;
+      min-height: 200px;
+      margin: 0 auto 0 0;
+    }
+
+    .breed_container {
+      max-width: 450px;
+      margin-left: 3rem;
+
+      h1 {
+        font-size: 2.5rem;
+        margin: 0 0 1.5rem 0;
+      }
+
+      .breed_description {
+        font-size: 1.5rem;
+        line-height: 2.1rem;
+      }
+
+      .breed_details {
+        margin: 2rem 0;
+        font-size: 1.4rem;
+        line-height: 1.9rem;
+      }
+    }
+  }
+}
+
+@media (min-width: 901px) {
+  .breed_info {
+    .breed_container {
+      max-width: 500px;
+    }
+  }
+}
+
+@media (min-width: 1023px) {
+  .breed_info {
+    .img_wrapper {
+      min-width: 371px;
+      min-height: 371px;
+      margin: 0 auto;
+    }
+
+    .breed_container {
+      max-width: 500px;
+      margin-left: 0;
+      h1 {
+        font-size: 3.5rem;
+        margin: 0 0 1.5rem 0;
+      }
+
+      .breed_description {
+        font-size: 1.8rem;
+        line-height: 2.4rem;
+      }
+
+      .breed_details {
+        margin: 2rem 0;
+        font-size: 1.6rem;
+        line-height: 1.9rem;
+      }
+    }
+  }
+}
