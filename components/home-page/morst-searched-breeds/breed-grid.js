@@ -9,7 +9,7 @@ function BreedGrid(props) {
     <div className={classes.grid_item}>
       <Link href={`/breed/${name.toLowerCase()}`}>
         <a>
-          <Image src={image} alt={`A cat image for ${name} breed`} width={200} height={200} />
+          <Image src={image} alt={`A cat image for ${name} breed`} width={220} height={220} />
         </a>
       </Link>
       <Link href={`/breed/${name.toLowerCase()}`}>

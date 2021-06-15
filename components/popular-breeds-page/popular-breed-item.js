@@ -7,11 +7,13 @@ function PopularBreedItem(props) {
   const { image, name, description, number } = props
   return (
     <div className={classes.popular_breed_item}>
-      <Link href={`/breed/${name.toLowerCase()}`}>
-        <a>
-          <Image src={image} alt={`cat image from the ${name} breed`} width={200} height={200} />
-        </a>
-      </Link>
+      <div className={classes.img_wrapper}>
+        <Link href={`/breed/${name.toLowerCase()}`}>
+          <a>
+            <Image src={image} alt={`cat image from the ${name} breed`} width={170} height={170} />
+          </a>
+        </Link>
+      </div>
       <div>
         <Link href={`/breed/${name.toLowerCase()}`}>
           <a>

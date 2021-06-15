@@ -17,7 +17,7 @@ function MostSearchedBreeds(props) {
         <h2>66+ Breeds for you to discover</h2>
         <Link href='/popular-breeds'>
           <a className={classes.flex_link}>
-            see more
+            <span>see more</span>
             <i className='fas fa-chevron-right'></i>
           </a>
         </Link>

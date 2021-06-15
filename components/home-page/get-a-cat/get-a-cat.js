@@ -16,7 +16,7 @@ function GetAcat() {
           </p>
           <Link href='/'>
             <a className={classes.flex_link}>
-              read more
+              <span>read more</span>
               <i className='fas fa-chevron-right'></i>
             </a>
           </Link>
