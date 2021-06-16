@@ -28,7 +28,7 @@
 
 - [Table of Contents](#table-of-contents)
 - [Overview](#overview)
-  - [Built With](#built-with)
+- [Built With](#built-with)
 - [Features](#features)
 - [How To Use](#how-to-use)
 - [Contact](#contact)
