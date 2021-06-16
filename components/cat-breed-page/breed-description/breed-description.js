@@ -9,7 +9,7 @@ function BreedDescription(props) {
   return (
     <div className={classes.breed_info}>
       <div className={classes.img_wrapper}>
-        {breed.image.url && (
+        {breed.image?.url && (
           <Image
             src={breed.image.url}
             alt={breed.title}
