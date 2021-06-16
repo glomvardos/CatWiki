@@ -1,5 +1,6 @@
 import { useState, useRef } from 'react'
 import { useRouter } from 'next/router'
+import Link from 'next/link'
 import classes from './search-bar.module.scss'
 
 function SearchBar(props) {
@@ -60,6 +61,7 @@ function SearchBar(props) {
   // Handle Input Field
   function inputFieldHandler(breedName) {
     setBreed(breedName)
+    searchedBreedHandler(breedName)
     inputRef.current.focus()
   }
 
@@ -80,9 +82,11 @@ function SearchBar(props) {
 
   // Display Breed Items
   const displayBreeds = foundBreeds.map(breed => (
-    <li key={breed.id} onClick={() => inputFieldHandler(breed.name)}>
-      {breed.name}
-    </li>
+    <Link key={breed.id} href={`/breed/${breed.name.toLowerCase()}`}>
+      <a onClick={() => inputFieldHandler(breed.name)}>
+        <li>{breed.name}</li>
+      </a>
+    </Link>
   ))
 
   return (
@@ -93,14 +97,14 @@ function SearchBar(props) {
         value={breed}
         onChange={searchHandler}
         onClick={onFocusHandler}
-        placeholder='Search'
+        placeholder='Enter your breed'
         autoComplete='off'
       />
 
       {isFocus && (
         <div className={classes.container}>
           <ul>
-            {(foundBreeds && foundBreeds.length > 0 && displayBreeds) || <li>No Results found</li>}
+            {(foundBreeds && foundBreeds.length > 0 && displayBreeds) || <li>No results found</li>}
           </ul>
         </div>
       )}

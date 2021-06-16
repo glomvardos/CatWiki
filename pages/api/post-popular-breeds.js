@@ -11,7 +11,14 @@ async function handler(req, res) {
     const { name, image, id, description } = req.body
     const breedIds = getBreedIds()
 
-    const client = await connectDatabase()
+    let client
+    try {
+      client = await connectDatabase()
+    } catch (err) {
+      res.status(500).json({ message: 'Connection to database failed.' })
+      return
+    }
+
     const db = client.db()
 
     if (

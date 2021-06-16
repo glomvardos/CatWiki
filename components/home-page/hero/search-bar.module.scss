@@ -4,8 +4,7 @@
   display: flex;
   align-items: center;
   position: relative;
-  width: 100px;
-  position: relative;
+  width: 135px;
 
   input {
     padding: 0.8rem 1.3rem;
@@ -19,36 +18,47 @@
 
     &::placeholder {
       color: inherit;
+      font-size: 1.1rem;
     }
   }
 
   i {
     position: absolute;
-    right: 15%;
+    right: 11%;
   }
   .container {
     position: absolute;
     background-color: $primary-bg-color;
-    overflow: auto;
-    width: 200px;
-    max-height: 250px;
-    font-size: 1.4rem;
+    border-radius: 1rem;
+    scrollbar-width: thin;
+    width: 135px;
+    max-height: 190px;
+    font-size: 1.1rem;
+    overflow-y: scroll;
     z-index: 1;
     top: 101%;
-    left: 7%;
     animation: searchItems 200ms ease-in;
+
+    &::-webkit-scrollbar {
+      width: 0.8rem;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #bdbdbd;
+      border-radius: 2rem;
+      height: 6rem;
+    }
 
     ul {
       list-style: none;
 
       li {
-        padding: 1.2rem 2rem;
+        padding: 1.1rem 1.3rem;
         cursor: default;
         font-weight: $font-weight-medium;
 
         &:hover {
-          color: $white-font-color;
-          background-color: $bg-dark;
+          background-color: rgba(0, 0, 0, 0.15);
         }
       }
     }
@@ -59,6 +69,16 @@
   .actions {
     width: 150px;
 
+    input {
+      &::placeholder {
+        font-size: 1.2rem;
+      }
+    }
+
+    .container {
+      width: 150px;
+      font-size: 1.2rem;
+    }
     i {
       right: 10%;
     }
@@ -72,6 +92,15 @@
     input {
       font-size: 1.4rem;
       padding: 1.7rem 2.2rem;
+
+      &::placeholder {
+        font-size: 1.4rem;
+      }
+    }
+
+    .container {
+      width: 200px;
+      font-size: 1.4rem;
     }
 
     i {
@@ -88,6 +117,10 @@
       font-size: 1.8rem;
       padding: 2.3rem 2.8rem;
       display: inline-block;
+
+      &::placeholder {
+        font-size: 1.8rem;
+      }
     }
 
     i {
@@ -97,7 +130,7 @@
 
     .container {
       width: 375px;
-      max-height: 300px;
+      max-height: 220px;
       font-size: 1.8rem;
       top: 101%;
       left: 2.8%;

@@ -8,15 +8,12 @@
   background: url('/images/HeroImagelg.png') no-repeat;
   background-size: cover;
   background-position: right;
-  margin-top: 1rem;
+  margin-top: 2rem;
   padding: 2rem;
 
-  svg {
+  img {
     height: auto;
     width: 90px;
-    path {
-      fill: #fff;
-    }
   }
 
   h1 {
@@ -32,7 +29,7 @@
 @media (min-width: 501px) {
   .header {
     height: 250px;
-    svg {
+    img {
       width: 100px;
     }
 
@@ -49,7 +46,7 @@
     height: 350px;
     padding: 5rem;
 
-    svg {
+    img {
       width: 150px;
     }
 
@@ -67,7 +64,7 @@
     height: 500px;
     padding: 8rem;
 
-    svg {
+    img {
       margin-top: -4.5rem;
       width: 300px;
     }

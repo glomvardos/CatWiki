@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import Hero from '../components/home-page/hero/hero'
 import MostSearchedBreeds from '../components/home-page/morst-searched-breeds/most-searched-breeds'
 import GetAcat from '../components/home-page/get-a-cat/get-a-cat'
@@ -9,6 +10,13 @@ function HomePage(props) {
 
   return (
     <>
+      <Head>
+        <title>CatWiki</title>
+        <meta
+          name='description'
+          content='Welcome to Catwiki here you can search for your favourite breed and learn more information about your feline friend'
+        />
+      </Head>
       <Hero breeds={breeds} />
       <MostSearchedBreeds popularBreeds={popularBreeds} />
       <GetAcat />

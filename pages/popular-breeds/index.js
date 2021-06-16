@@ -1,10 +1,19 @@
+import Head from 'next/head'
 import PopularBreeds from '../../components/popular-breeds-page/popular-breeds'
 
 import { connectDatabase, getPopularBreeds } from '../../helpers/connectDatabase'
 
 function PopularBreedsPage(props) {
   const { popularBreeds } = props
-  return <PopularBreeds popularBreeds={popularBreeds} />
+  return (
+    <>
+      <Head>
+        <title>Most Popular Breeds</title>
+        <meta name='description' content='Here you can find the most popular breeds' />
+      </Head>
+      <PopularBreeds popularBreeds={popularBreeds} />
+    </>
+  )
 }
 
 export async function getStaticProps() {

@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import CatBreed from '../../components/cat-breed-page/cat-breed'
 
 import { getBreedImages, getBreeds } from '../../helpers/getBreeds'
@@ -5,7 +6,15 @@ import { getBreedImages, getBreeds } from '../../helpers/getBreeds'
 function BreedPage(props) {
   const { breed, breedImages } = props
 
-  return <CatBreed breed={breed} breedImages={breedImages} />
+  return (
+    <>
+      <Head>
+        <title>{breed.name}</title>
+        <meta name='description' content={breed.description} />
+      </Head>
+      <CatBreed breed={breed} breedImages={breedImages} />
+    </>
+  )
 }
 
 export async function getStaticProps(context) {

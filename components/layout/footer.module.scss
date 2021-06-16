@@ -13,14 +13,6 @@
     margin: 0 0.4rem 0 0;
   }
 
-  svg {
-    height: auto;
-    width: 75px;
-    path {
-      fill: #fff;
-    }
-  }
-
   p {
     margin-top: 1rem;
     display: flex;
@@ -50,10 +42,6 @@
 @media (min-width: 701px) {
   .footer {
     padding: 2rem 5rem;
-
-    svg {
-      width: 85px;
-    }
   }
 }
 
@@ -63,10 +51,6 @@
 
     p {
       font-size: 1.8rem;
-    }
-
-    svg {
-      width: 110px;
     }
   }
 }
