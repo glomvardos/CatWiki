@@ -12,13 +12,13 @@
     width: 100%;
     border: none;
 
-    &:focus {
-      outline: none;
-    }
-
     &::placeholder {
       color: inherit;
       font-size: 1.1rem;
+    }
+
+    &:focus {
+      outline: none;
     }
   }
 
