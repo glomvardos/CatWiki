@@ -32,7 +32,7 @@ export async function getStaticProps() {
     props: {
       popularBreeds: popularBreeds,
     },
-    revalidate: 86400,
+    revalidate: 43200,
   }
 }
 

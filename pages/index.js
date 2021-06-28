@@ -48,7 +48,7 @@ export async function getStaticProps() {
       breeds: transformedData,
       popularBreeds: popularBreeds,
     },
-    revalidate: 86400,
+    revalidate: 43200,
   }
 }
 
